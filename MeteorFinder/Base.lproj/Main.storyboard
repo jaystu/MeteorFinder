@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q6A-xB-OJw">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meteor Finder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeteorFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tdX-Wr-vgv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0I-bO-zFt">
+                                <rect key="frame" x="255" y="550" width="90" height="30"/>
+                                <state key="normal" title="Find Meteors"/>
+                                <connections>
+                                    <action selector="findMeteor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3B-16-Aev"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x0I-bO-zFt" secondAttribute="bottom" constant="20" id="BGz-tC-2Wt"/>
+                            <constraint firstItem="x0I-bO-zFt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FV5-6t-ibr"/>
+                            <constraint firstItem="tdX-Wr-vgv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eWM-wj-HJa"/>
+                            <constraint firstItem="tdX-Wr-vgv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="rlF-qS-UTF"/>
+                            <constraint firstAttribute="trailing" secondItem="tdX-Wr-vgv" secondAttribute="trailing" id="s2R-PC-AUH"/>
+                            <constraint firstItem="tdX-Wr-vgv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z6B-uH-QWp"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Meteor Finder" id="FXL-3l-tDq"/>
+                    <connections>
+                        <outlet property="findMeteorButton" destination="x0I-bO-zFt" id="Kag-v0-9VS"/>
+                        <outlet property="mapView" destination="tdX-Wr-vgv" id="luz-vl-QfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047" y="-387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K9T-37-tUv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q6A-xB-OJw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KIy-x7-v2s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="691-eg-Zwt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNL-zW-Tei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="-387"/>
         </scene>
     </scenes>
 </document>
