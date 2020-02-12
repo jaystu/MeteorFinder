@@ -1,8 +1,8 @@
-MeteorFinder
+MeteoriteFinder
 ==========================
 ![](image1.png) ![](image3.png)
 
-MeteorFinder is an iOS application that utilizes the NASA API Endpoint for Meteorite Landings to display the closest meteors to your current location.  It also provides information on each meteor such as: Name, Mass, and Year Fallen.  
+MeteoriteFinder is an iOS application that utilizes the NASA API Endpoint for Meteorite Landings to display the closest meteors to your current location.  It also provides information on each meteor such as: Name, Mass, and Year Fallen.  
 
 Built during NASA SpaceApps 2016 @ Pasadena
 Ammar Rizvi (Front-End), John Stuart(Back-End), Raymond Farias(Lead)
